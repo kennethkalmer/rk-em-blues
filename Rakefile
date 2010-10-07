@@ -11,3 +11,18 @@ task :worker do
     Blues.configure_worker!
   }
 end
+
+task :em_test do
+  require 'em-http'
+  EM.run {
+    EM.add_periodic_timer( 2 ) {
+      http = EM::HttpRequest.new('http://www.google.com/').get :timeout => 5
+      http.callback {
+        $stderr.write("+")
+      }
+      http.errback {
+        $stderr.write("-")
+      }
+    }
+  }
+end
