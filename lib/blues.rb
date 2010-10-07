@@ -20,9 +20,19 @@ module Blues
 
     def configure_engine!
       # Engine and worker
-      RuoteKit.engine = Ruote::Engine.new(
-        Ruote::FsStorage.new('ruote_work')
-      )
+      if defined?( Thin )
+        p [ 'Thin detected, no need to run a worker']
+        RuoteKit.engine = Ruote::Engine.new(
+          Ruote::Worker.new(
+            Ruote::FsStorage.new('ruote_work')
+          )
+        )
+      else
+        p [ 'Thin absent, please run a worker with "rake workder"' ]
+        RuoteKit.engine = Ruote::Engine.new(
+          Ruote::FsStorage.new('ruote_work')
+        )
+      end
 
       RuoteKit.engine.register do
         participant :debug, Blues::Debug

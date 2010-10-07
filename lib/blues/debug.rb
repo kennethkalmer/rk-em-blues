@@ -1,3 +1,5 @@
+require 'em-http'
+
 module Blues
   class Debug
 
