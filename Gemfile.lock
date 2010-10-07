@@ -1,0 +1,56 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    addressable (2.2.1)
+    daemons (1.1.0)
+    em-http-request (0.2.13)
+      addressable (>= 2.0.0)
+      eventmachine (>= 0.12.9)
+    eventmachine (0.12.10)
+    haml (3.0.21)
+    rack (1.2.1)
+    ruby_parser (2.0.5)
+      sexp_processor (~> 3.0)
+    rufus-cloche (0.1.20)
+      rufus-json (>= 0.2.5)
+    rufus-dollar (1.0.2)
+    rufus-json (0.2.5)
+    rufus-mnemo (1.1.1)
+    rufus-scheduler (2.0.6)
+    rufus-treechecker (1.0.3)
+      ruby_parser
+    ruote (2.1.11)
+      rufus-cloche (>= 0.1.20)
+      rufus-dollar
+      rufus-json (>= 0.2.5)
+      rufus-mnemo (>= 1.1.0)
+      rufus-scheduler (>= 2.0.5)
+      rufus-treechecker (>= 1.0.3)
+    ruote-kit (2.1.11)
+      bundler
+      haml
+      rufus-json (>= 0.2.5)
+      ruote (~> 2.1.11)
+      sinatra
+      sinatra-respond_to
+      thin
+      yajl-ruby
+    sexp_processor (3.0.5)
+    sinatra (1.0)
+      rack (>= 1.0)
+    sinatra-respond_to (0.5.0)
+      sinatra (~> 1.0)
+    thin (1.2.7)
+      daemons (>= 1.0.9)
+      eventmachine (>= 0.12.6)
+      rack (>= 1.0.0)
+    yajl-ruby (0.7.8)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  em-http-request
+  eventmachine
+  ruote-kit
+  sinatra
