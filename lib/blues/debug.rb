@@ -8,6 +8,7 @@ module Blues
     def do_not_thread; true; end
 
     def consume( workitem )
+      p [ :em_running?, EM.reactor_running?, EM.reactor_thread? ]
       p [ :ping, :requested ]
       http = EM::HttpRequest.new('http://www.google.com/').get :timeout => 5
       http.callback {
