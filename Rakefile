@@ -7,6 +7,7 @@ task :worker do
     EM.error_handler{ |e|
       puts "Error raised during event loop: #{e.message}"
     }
+    EM.add_periodic_timer(0.1) { p [ :em_thread, EM.reactor_thread.status ] }
 
     Blues.configure_worker!
   }

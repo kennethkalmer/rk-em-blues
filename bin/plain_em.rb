@@ -10,10 +10,12 @@ require 'eventmachine'
 require 'em-http'
 require 'ruote'
 require 'ruote/storage/hash_storage'
+require 'ruote/storage/fs_storage'
 
 engine = Ruote::Engine.new(
   Ruote::Worker.new(
-    Ruote::HashStorage.new
+    #Ruote::HashStorage.new
+    Ruote::FsStorage.new( 'ruote_work2' )
   )
 )
 
@@ -50,5 +52,6 @@ process = Ruote.process_definition :name => 'Blues' do
 end
 
 EM.run {
+  EM.add_periodic_timer(0.1) { p [ :em_thread, EM.reactor_thread.status ] }
   wfid = engine.launch( process )
 }

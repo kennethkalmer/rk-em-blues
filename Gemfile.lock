@@ -2,13 +2,28 @@ GEM
   remote: http://rubygems.org/
   specs:
     addressable (2.2.1)
+    archive-tar-minitar (0.5.2)
+    columnize (0.3.1)
     daemons (1.1.0)
     em-http-request (0.2.13)
       addressable (>= 2.0.0)
       eventmachine (>= 0.12.9)
     eventmachine (0.12.10)
     haml (3.0.21)
+    linecache19 (0.5.11)
+      ruby_core_source (>= 0.1.4)
     rack (1.2.1)
+    redis (2.0.10)
+    ruby-debug-base19 (0.11.24)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby_core_source (>= 0.1.4)
+    ruby-debug19 (0.11.6)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby-debug-base19 (>= 0.11.19)
+    ruby_core_source (0.1.4)
+      archive-tar-minitar (>= 0.5.2)
     ruby_parser (2.0.5)
       sexp_processor (~> 3.0)
     rufus-cloche (0.1.20)
@@ -35,6 +50,9 @@ GEM
       sinatra-respond_to
       thin
       yajl-ruby
+    ruote-redis (2.1.11)
+      redis (>= 2.0.5)
+      ruote (>= 2.1.11)
     sexp_processor (3.0.5)
     sinatra (1.0)
       rack (>= 1.0)
@@ -53,5 +71,7 @@ DEPENDENCIES
   em-http-request
   eventmachine
   haml
+  ruby-debug19
   ruote-kit
+  ruote-redis
   sinatra

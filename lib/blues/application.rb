@@ -10,7 +10,7 @@ module Blues
     end
 
     post "/launch" do
-      RuoteKit.engine.launch( IO.read( File.dirname(__FILE__) + '/blues_process.rb' ) )
+      RuoteKit.engine.launch( eval IO.read( File.dirname(__FILE__) + '/blues_process.rb' ) )
     end
 
   end
