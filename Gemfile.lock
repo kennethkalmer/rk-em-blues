@@ -52,5 +52,6 @@ PLATFORMS
 DEPENDENCIES
   em-http-request
   eventmachine
+  haml
   ruote-kit
   sinatra
